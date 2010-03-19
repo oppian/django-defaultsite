@@ -1,3 +1,5 @@
 *.pyc
 .project
 .pydevproject
+dist/
+src/django_defaultsite.egg-info/
