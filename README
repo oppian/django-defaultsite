@@ -17,7 +17,7 @@ If you want to configure it further these settings are available, just put them 
 
 SITE_ID: The primary key on which Site object to modify. Normally 1.
 
-SITE_DOMAIN: The domain to use to replace 'example.com'. Defaults to to your machines hostname.
+SITE_DOMAIN: The domain to use to replace 'example.com'. Defaults to your machine's hostname.
 
 SITE_NAME: The sites name. Defaults to 'defaultsite'.
  
