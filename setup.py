@@ -5,25 +5,27 @@ Created on 5 Mar 2010
 '''
 
 # hook to find setup tools if not installed
-from ez_setup import use_setuptools
-use_setuptools()
+try:
+    from ez_setup import use_setuptools
+    use_setuptools()
+except ImportError:
+    pass
 
 from setuptools import setup, find_packages
 setup(
     name = "django-defaultsite",
-    version = "1.0",
-    packages = [
-        'defaultsite',
-    ],
+    version = "1.1",
+    packages = find_packages('src'),
     package_dir = {'': 'src'},
+    package_data={'': ['LICENSE']},
     include_package_data=True,
     zip_safe=False,
     
     # metadata for upload to PyPI
-    author = "Oppian",
+    author = "Oppian System Ltd",
     author_email = "matt@oppian.com",
     description = "django-defaultsiteSets the Site object in django to something better then example.com.",
-    license = "MIT",
+    license = 'LICENSE.txt',
     keywords = "django site example.com",
     classifiers=[
         'Development Status :: 3 - Alpha',
@@ -34,6 +36,7 @@ setup(
         'Programming Language :: Python',
         'Framework :: Django',
     ],
-    url = "http://oppian.com/labs/django-defaultsite/",   # project home page, if any
+    url = "http://oppian.com/labs/django-defaultsite/",
+    long_description=open('README.txt').read(),
 )
 
